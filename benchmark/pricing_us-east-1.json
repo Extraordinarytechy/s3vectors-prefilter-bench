@@ -1,0 +1,28 @@
+{
+  "region": "us-east-1",
+  "source_url": "https://aws.amazon.com/s3/pricing/",
+  "fetched_utc": "2026-10-04",
+  "provenance": "Transcribed from research/AWS_FACTS.md section 12: the S3 pricing page (Vectors tab) and the price feed it renders from (feed publication 2026-09-28T23:04:16Z), both fetched 2026-10-02. Re-fetched on estimate day 2026-10-04T19:00Z: the live page text (storage $0.06/GB-month, PUT $0.20/GB with 128 KB minimum, $2.50 per million queries, $0.004/TB data processed for the first 100K vectors, $0.01/GB data returned, 256-byte minimum per result, first 512KB per query free) and the feed (still published 2026-09-28T23:04:16Z, so the $0.055 per 1,000 other-requests rate is unchanged) match every value below. A future mismatch requires editing this file, re-running estimate, and a new approval.",
+  "rates": {
+    "storage_usd_per_gb_month": 0.06,
+    "put_usd_per_gb": 0.20,
+    "put_min_bytes": 131072,
+    "other_requests_usd_per_1000": 0.055,
+    "query_requests_usd_per_1000": 0.0025,
+    "data_processed_usd_per_tb_first_100k": 0.004,
+    "data_returned_usd_per_gb": 0.01,
+    "data_returned_min_bytes_per_result": 256,
+    "data_returned_free_bytes_per_query": 524288
+  },
+  "wording": {
+    "storage_usd_per_gb_month": "Vector storage: $0.06 per GB-month (logical vector data + key + metadata)",
+    "put_usd_per_gb": "PUT: $0.20 per logical GB uploaded",
+    "put_min_bytes": "minimum charge 128 KB per PUT",
+    "other_requests_usd_per_1000": "GET, LIST and all other requests: $0.055 per 1,000 requests",
+    "query_requests_usd_per_1000": "Query requests: $0.0025 per 1,000 requests",
+    "data_processed_usd_per_tb_first_100k": "Data processed, first 100K vectors: $0.004 per TB",
+    "data_returned_usd_per_gb": "Data returned: $0.01 per GB",
+    "data_returned_min_bytes_per_result": "each result billed at a minimum of 256 bytes",
+    "data_returned_free_bytes_per_query": "first 512KB of data returned per query is free (the page's example narrative says 500KB; discrepancy D5, 512 KB used)"
+  }
+}

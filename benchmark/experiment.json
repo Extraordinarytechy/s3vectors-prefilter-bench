@@ -1,0 +1,65 @@
+{
+  "dataset": {
+    "n": 50000,
+    "dim": 384,
+    "metric": "cosine",
+    "seed": 20260930,
+    "n_queries": 50,
+    "generator": {"n_clusters": 64, "latent_dim": 32, "latent_noise": 0.35, "ambient_noise": 0.05},
+    "metadata_fields": [
+      {"name": "tenant",
+       "counts": {"tenant-s50": 25000, "tenant-s10": 5000, "tenant-s1": 500, "tenant-s01": 50,
+                  "tenant-s001": 5, "tenant-few": 3, "tenant-one": 1},
+       "background": {"prefix": "tenant-bg-", "count": 100, "total": 19441}},
+      {"name": "category", "values": ["c0", "c1", "c2", "c3"], "count_each": 12500},
+      {"name": "year", "values": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024], "count_each": 5000}
+    ]
+  },
+  "filters": [
+    {"id": "F50", "filter": {"tenant": "tenant-s50"}, "role": "broad"},
+    {"id": "F10", "filter": {"tenant": "tenant-s10"}, "role": "selectivity"},
+    {"id": "F1", "filter": {"tenant": "tenant-s1"}, "role": "selectivity"},
+    {"id": "F01", "filter": {"tenant": "tenant-s01"}, "role": "selectivity"},
+    {"id": "F001", "filter": {"tenant": "tenant-s001"}, "role": "extreme"},
+    {"id": "FFEW", "filter": {"tenant": "tenant-few"}, "role": "fewer_than_k"},
+    {"id": "FONE", "filter": {"tenant": "tenant-one"}, "role": "exactly_one"},
+    {"id": "FZERO", "filter": {"tenant": "tenant-absent"}, "role": "zero_match"},
+    {"id": "FAND2", "filter": {"$and": [{"tenant": "tenant-s1"}, {"category": "c1"}]}, "role": "multi_condition"},
+    {"id": "FAND3", "filter": {"$and": [{"tenant": "tenant-s10"}, {"category": "c2"}, {"year": {"$gte": 2020}}]},
+     "role": "multi_condition"}
+  ],
+  "constraint_probe": {"field": "tenant", "in_count": 100, "extra_value": "tenant-s1", "query_id": "q-00", "k": 10},
+  "k_values": [5, 10, 20, 50],
+  "repeats": 3,
+  "postfilter_repeats": 2,
+  "topk_max_documented": {
+    "value": 10000,
+    "results_per_page": 100,
+    "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html",
+    "fetched_utc": "2026-10-02",
+    "note": "Re-read the limits page on run day before approving the estimate (DESIGN 7.4)."
+  },
+  "budgets": [100, 1000, 10000],
+  "aws": {
+    "list_vectors_max_results": 1000,
+    "list_vectors_max_results_source": "ListVectors.maxResults max=1000 in the pinned boto3/botocore 1.43.107 s3vectors service model",
+    "put_batch_size": 500,
+    "ingest_rate_per_s": 4,
+    "query_rate_per_s": 10,
+    "readiness_poll_s": 15,
+    "readiness_max_polls": 40,
+    "probe_list_poll_s": 15,
+    "probe_list_max_polls": 8,
+    "capture_invocations": 3,
+    "cleanup_list_bucket_pages": 1,
+    "retention_days": 7,
+    "failed_request_abort_fraction": 0.01
+  },
+  "simulator": {
+    "nlist": 256,
+    "kmeans_iters": 20,
+    "budgets_c": [500, 2000, 8000],
+    "headline_c": 2000,
+    "postfilter_pairs": [[100, 500], [100, 2000], [1000, 2000], [100, 8000], [1000, 8000]]
+  }
+}

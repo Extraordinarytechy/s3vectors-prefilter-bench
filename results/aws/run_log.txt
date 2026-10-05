@@ -1,0 +1,9 @@
+# Run log for run 20261005t0953-a9ba, copied verbatim from the runner's log file.
+# Timestamps are local time (UTC+05:30): 16:35:25 local = 11:05:25 UTC.
+2026-10-05 15:23:24,074 INFO new run id 20261005t0953-a9ba (mode own, hard_cap_usd 0.374573)
+2026-10-05 15:23:44,381 INFO PHASE COMPLETE aws-probe
+2026-10-05 15:28:10,213 INFO PHASE COMPLETE aws-ingest
+2026-10-05 16:35:25,908 WARNING retry query_vectors attempt 1 after ConnectionClosedError
+2026-10-05 18:04:25,398 INFO PHASE COMPLETE aws-query
+2026-10-05 19:04:41,689 INFO PHASE COMPLETE aws-capture
+2026-10-05 19:04:59,965 INFO PHASE COMPLETE aws-cleanup

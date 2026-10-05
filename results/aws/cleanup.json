@@ -1,0 +1,115 @@
+{
+  "actions": [
+    {
+      "action": "delete_index",
+      "error_code": null,
+      "error_message": null,
+      "final_status": "deleted",
+      "name": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "ok": true,
+      "role": "probe_index",
+      "utc": "2026-10-05T13:34:57.128060Z"
+    },
+    {
+      "action": "delete_index",
+      "error_code": null,
+      "error_message": null,
+      "final_status": "deleted",
+      "name": "s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "ok": true,
+      "role": "main_index",
+      "utc": "2026-10-05T13:34:57.550891Z"
+    },
+    {
+      "action": "delete_vector_bucket",
+      "error_code": null,
+      "error_message": null,
+      "final_status": "deleted",
+      "name": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "ok": true,
+      "role": "probe_bucket",
+      "utc": "2026-10-05T13:34:57.997427Z"
+    },
+    {
+      "action": "delete_vector_bucket",
+      "error_code": null,
+      "error_message": null,
+      "final_status": "deleted",
+      "name": "s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "ok": true,
+      "role": "main_bucket",
+      "utc": "2026-10-05T13:34:58.467698Z"
+    }
+  ],
+  "all_owned_gone": true,
+  "manifest_final": [
+    {
+      "arn_resource": "bucket/s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "bucket": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "created_utc": "2026-10-05T09:53:37.297243Z",
+      "error_code": null,
+      "index": null,
+      "owned": true,
+      "role": "probe_bucket",
+      "status": "deleted",
+      "type": "bucket",
+      "updated_utc": "2026-10-05T13:34:57.908295Z"
+    },
+    {
+      "arn_resource": "bucket/s3vectors-prefilter-bench-20261005t0953-a9ba-probe/index/s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "bucket": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "created_utc": "2026-10-05T09:53:39.616352Z",
+      "error_code": null,
+      "index": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "owned": true,
+      "role": "probe_index",
+      "status": "deleted",
+      "type": "index",
+      "updated_utc": "2026-10-05T13:34:57.068337Z"
+    },
+    {
+      "arn_resource": "bucket/s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "bucket": "s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "created_utc": "2026-10-05T09:54:01.152831Z",
+      "error_code": null,
+      "index": null,
+      "owned": true,
+      "role": "main_bucket",
+      "status": "deleted",
+      "type": "bucket",
+      "updated_utc": "2026-10-05T13:34:58.394841Z"
+    },
+    {
+      "arn_resource": "bucket/s3vectors-prefilter-bench-20261005t0953-a9ba/index/s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "bucket": "s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "created_utc": "2026-10-05T09:54:02.192433Z",
+      "error_code": null,
+      "index": "s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "owned": true,
+      "role": "main_index",
+      "status": "deleted",
+      "type": "index",
+      "updated_utc": "2026-10-05T13:34:57.475592Z"
+    }
+  ],
+  "run_id": "20261005t0953-a9ba",
+  "utc": "2026-10-05T13:34:59.778129Z",
+  "verification": [
+    {
+      "check": "GetIndex",
+      "gone": true,
+      "name": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+    },
+    {
+      "check": "GetIndex",
+      "gone": true,
+      "name": "s3vectors-prefilter-bench-20261005t0953-a9ba"
+    },
+    {
+      "check": "ListVectorBuckets",
+      "leftover_buckets": [],
+      "preexisting_not_ours": [],
+      "prefix": "s3vectors-prefilter-bench-20261005t0953-a9ba"
+    }
+  ]
+}

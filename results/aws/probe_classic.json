@@ -1,0 +1,532 @@
+{
+  "records": [
+    {
+      "api": "CreateVectorBucket",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": null,
+      "error_code": null,
+      "error_message": null,
+      "expectation_source": null,
+      "http_status": 200,
+      "ok": true,
+      "request": {
+        "tags": {
+          "project": "s3vectors-prefilter-bench",
+          "run_id": "20261005t0953-a9ba"
+        },
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": {
+        "ResponseMetadata": {
+          "HTTPStatusCode": 200,
+          "RequestId": "150ab864-2148-848a-ab74-d7d2d0e74de0"
+        },
+        "vectorBucketArn": "arn:REDACTED"
+      },
+      "step": "1",
+      "timestamp_utc": "2026-10-05T09:53:37.830146Z"
+    },
+    {
+      "api": "GetVectorBucket",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": null,
+      "error_code": null,
+      "error_message": null,
+      "expectation_source": null,
+      "http_status": 200,
+      "ok": true,
+      "request": {
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": {
+        "ResponseMetadata": {
+          "HTTPStatusCode": 200,
+          "RequestId": "1798fea3-c7a7-80d2-bc32-9b3aa03e807f"
+        },
+        "vectorBucket": {
+          "creationTime": "2026-10-05T15:23:37+05:30",
+          "defaultIndexMode": "ENHANCED",
+          "encryptionConfiguration": {
+            "sseType": "AES256"
+          },
+          "vectorBucketArn": "arn:REDACTED",
+          "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+        }
+      },
+      "step": "2",
+      "timestamp_utc": "2026-10-05T09:53:38.290081Z"
+    },
+    {
+      "api": "PutVectorBucketDefaultIndexMode",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": "not documented for a new bucket; the probe exists to find out",
+      "error_code": "ValidationException",
+      "error_message": "defaultIndexMode cannot be set to CLASSIC because this vector bucket does not support CLASSIC mode",
+      "expectation_source": "DOC-MODE",
+      "http_status": 400,
+      "ok": false,
+      "request": {
+        "defaultIndexMode": "CLASSIC",
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": null,
+      "step": "3",
+      "timestamp_utc": "2026-10-05T09:53:38.764954Z"
+    },
+    {
+      "api": "GetVectorBucket",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": null,
+      "error_code": null,
+      "error_message": null,
+      "expectation_source": null,
+      "http_status": 200,
+      "ok": true,
+      "request": {
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": {
+        "ResponseMetadata": {
+          "HTTPStatusCode": 200,
+          "RequestId": "1f95c160-bbdd-86e0-8030-ab2eae9899cf"
+        },
+        "vectorBucket": {
+          "creationTime": "2026-10-05T15:23:37+05:30",
+          "defaultIndexMode": "ENHANCED",
+          "encryptionConfiguration": {
+            "sseType": "AES256"
+          },
+          "vectorBucketArn": "arn:REDACTED",
+          "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+        }
+      },
+      "step": "4",
+      "timestamp_utc": "2026-10-05T09:53:39.163165Z"
+    },
+    {
+      "api": "CreateIndex",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": null,
+      "error_code": null,
+      "error_message": null,
+      "expectation_source": null,
+      "http_status": 200,
+      "ok": true,
+      "request": {
+        "dimension": 8,
+        "distanceMetric": "cosine",
+        "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": {
+        "ResponseMetadata": {
+          "HTTPStatusCode": 200,
+          "RequestId": "145eef39-d8de-8887-8949-ad4d84054c23"
+        },
+        "indexArn": "arn:REDACTED"
+      },
+      "step": "5",
+      "timestamp_utc": "2026-10-05T09:53:40.216230Z"
+    },
+    {
+      "api": "GetIndex",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": "not documented for a new bucket; the probe exists to find out",
+      "error_code": null,
+      "error_message": null,
+      "expectation_source": "DOC-MODE",
+      "http_status": 200,
+      "ok": true,
+      "request": {
+        "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": {
+        "ResponseMetadata": {
+          "HTTPStatusCode": 200,
+          "RequestId": "1df77f6a-1247-8469-bebc-512b608bd82e"
+        },
+        "index": {
+          "creationTime": "2026-10-05T15:23:39+05:30",
+          "dataType": "float32",
+          "dimension": 8,
+          "distanceMetric": "cosine",
+          "encryptionConfiguration": {
+            "sseType": "AES256"
+          },
+          "indexArn": "arn:REDACTED",
+          "indexMode": "ENHANCED",
+          "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+          "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+        }
+      },
+      "step": "6",
+      "timestamp_utc": "2026-10-05T09:53:40.604114Z"
+    },
+    {
+      "api": "PutVectors",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": null,
+      "error_code": null,
+      "error_message": null,
+      "expectation_source": null,
+      "http_status": 200,
+      "ok": true,
+      "request": {
+        "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+        "metadata": [
+          {
+            "key": "p-00",
+            "tenant": "p0"
+          },
+          {
+            "key": "p-01",
+            "tenant": "p1"
+          },
+          {
+            "key": "p-02",
+            "tenant": "p0"
+          },
+          {
+            "key": "p-03",
+            "tenant": "p1"
+          },
+          {
+            "key": "p-04",
+            "tenant": "p0"
+          },
+          {
+            "key": "p-05",
+            "tenant": "p1"
+          },
+          {
+            "key": "p-06",
+            "tenant": "p0"
+          },
+          {
+            "key": "p-07",
+            "tenant": "p1"
+          },
+          {
+            "key": "p-08",
+            "tenant": "p0"
+          },
+          {
+            "key": "p-09",
+            "tenant": "p1"
+          }
+        ],
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+        "vector_count": 10
+      },
+      "response": {
+        "ResponseMetadata": {
+          "HTTPStatusCode": 200,
+          "RequestId": "1270f0d6-ea8b-8d73-a5aa-d4341388aeaa"
+        }
+      },
+      "step": "7",
+      "timestamp_utc": "2026-10-05T09:53:41.282826Z"
+    },
+    {
+      "api": "ListVectors",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": null,
+      "error_code": null,
+      "error_message": null,
+      "expectation_source": null,
+      "http_status": 200,
+      "listed": 10,
+      "ok": true,
+      "polls": 1,
+      "probe_index_ready": true,
+      "request": {
+        "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+        "polls": 1,
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": {
+        "ResponseMetadata": {
+          "HTTPStatusCode": 200,
+          "RequestId": "1bfa6d20-3966-8443-bb3d-b3adfd85c3ca"
+        },
+        "vectors": [
+          {
+            "key": "p-04"
+          },
+          {
+            "key": "p-00"
+          },
+          {
+            "key": "p-09"
+          },
+          {
+            "key": "p-03"
+          },
+          {
+            "key": "p-05"
+          },
+          {
+            "key": "p-02"
+          },
+          {
+            "key": "p-07"
+          },
+          {
+            "key": "p-06"
+          },
+          {
+            "key": "p-08"
+          },
+          {
+            "key": "p-01"
+          }
+        ]
+      },
+      "step": "7a",
+      "timestamp_utc": "2026-10-05T09:53:41.795626Z"
+    },
+    {
+      "api": "UpdateIndexMode",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": "rejected: CLASSIC only for indexes in buckets created before 2026-09-30",
+      "error_code": "ValidationException",
+      "error_message": "indexMode cannot be set to CLASSIC because the vector bucket does not support CLASSIC mode",
+      "expectation_source": "BOTO-update_index_mode",
+      "http_status": 400,
+      "ok": false,
+      "request": {
+        "indexMode": "CLASSIC",
+        "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": null,
+      "step": "8",
+      "timestamp_utc": "2026-10-05T09:53:42.234084Z"
+    },
+    {
+      "api": "GetIndex",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": null,
+      "error_code": null,
+      "error_message": null,
+      "expectation_source": null,
+      "http_status": 200,
+      "ok": true,
+      "request": {
+        "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": {
+        "ResponseMetadata": {
+          "HTTPStatusCode": 200,
+          "RequestId": "19c915b3-47e7-8e96-9427-8128789c6d58"
+        },
+        "index": {
+          "creationTime": "2026-10-05T15:23:39+05:30",
+          "dataType": "float32",
+          "dimension": 8,
+          "distanceMetric": "cosine",
+          "encryptionConfiguration": {
+            "sseType": "AES256"
+          },
+          "indexArn": "arn:REDACTED",
+          "indexMode": "ENHANCED",
+          "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+          "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+        }
+      },
+      "step": "9",
+      "timestamp_utc": "2026-10-05T09:53:42.712979Z"
+    },
+    {
+      "api": "QueryVectors",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": "rejected: CLASSIC can't be specified for an ENHANCED index",
+      "error_code": "ValidationException",
+      "error_message": "queryMode cannot be CLASSIC when indexMode is ENHANCED",
+      "expectation_source": "BOTO-query_vectors",
+      "http_status": 400,
+      "ok": false,
+      "probe_index_ready": true,
+      "query_mode": "CLASSIC",
+      "request": {
+        "filter": {
+          "tenant": "p0"
+        },
+        "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+        "queryMode": "CLASSIC",
+        "queryVector": {
+          "float32": [
+            -0.1458357870578766,
+            -0.06613403558731079,
+            0.19520628452301025,
+            -0.6732804775238037,
+            0.36045020818710327,
+            0.011731437407433987,
+            0.4520912170410156,
+            0.3853539228439331
+          ]
+        },
+        "returnDistance": true,
+        "topK": 3,
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": null,
+      "step": "10",
+      "timestamp_utc": "2026-10-05T09:53:43.182260Z"
+    },
+    {
+      "api": "QueryVectors",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": null,
+      "error_code": null,
+      "error_message": null,
+      "expectation_source": null,
+      "http_status": 200,
+      "ok": true,
+      "probe_index_ready": true,
+      "query_mode": "ENHANCED",
+      "request": {
+        "filter": {
+          "tenant": "p0"
+        },
+        "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+        "queryMode": "ENHANCED",
+        "queryVector": {
+          "float32": [
+            -0.1458357870578766,
+            -0.06613403558731079,
+            0.19520628452301025,
+            -0.6732804775238037,
+            0.36045020818710327,
+            0.011731437407433987,
+            0.4520912170410156,
+            0.3853539228439331
+          ]
+        },
+        "returnDistance": true,
+        "topK": 3,
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": {
+        "ResponseMetadata": {
+          "HTTPStatusCode": 200,
+          "RequestId": "1c3ddc57-d2c4-8f26-830a-23b139554b8e"
+        },
+        "distanceMetric": "cosine",
+        "vectors": [
+          {
+            "distance": 4.76837158203125e-06,
+            "key": "p-00"
+          },
+          {
+            "distance": 0.4700027108192444,
+            "key": "p-08"
+          },
+          {
+            "distance": 1.4282128810882568,
+            "key": "p-04"
+          }
+        ]
+      },
+      "step": "11",
+      "timestamp_utc": "2026-10-05T09:53:43.678655Z"
+    },
+    {
+      "api": "QueryVectors",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": null,
+      "error_code": null,
+      "error_message": null,
+      "expectation_source": null,
+      "http_status": 200,
+      "ok": true,
+      "probe_index_ready": true,
+      "query_mode": null,
+      "request": {
+        "filter": {
+          "tenant": "p0"
+        },
+        "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+        "queryVector": {
+          "float32": [
+            -0.1458357870578766,
+            -0.06613403558731079,
+            0.19520628452301025,
+            -0.6732804775238037,
+            0.36045020818710327,
+            0.011731437407433987,
+            0.4520912170410156,
+            0.3853539228439331
+          ]
+        },
+        "returnDistance": true,
+        "topK": 3,
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe"
+      },
+      "response": {
+        "ResponseMetadata": {
+          "HTTPStatusCode": 200,
+          "RequestId": "123a6068-d724-812a-8c76-1edc660e58cc"
+        },
+        "distanceMetric": "cosine",
+        "vectors": [
+          {
+            "distance": 4.76837158203125e-06,
+            "key": "p-00"
+          },
+          {
+            "distance": 0.4700027108192444,
+            "key": "p-08"
+          },
+          {
+            "distance": 1.4282128810882568,
+            "key": "p-04"
+          }
+        ]
+      },
+      "step": "12",
+      "timestamp_utc": "2026-10-05T09:53:44.166384Z"
+    },
+    {
+      "api": "QueryVectors",
+      "attempts": 1,
+      "boto3_version": "1.43.107",
+      "documented_expectation": "rejected: CLASSIC can't be specified for an ENHANCED index",
+      "error_code": "ValidationException",
+      "error_message": "queryMode cannot be CLASSIC when indexMode is ENHANCED",
+      "expectation_source": "BOTO-query_vectors",
+      "http_status": 400,
+      "ok": false,
+      "request": {
+        "filter": {
+          "tenant": "tenant-s1"
+        },
+        "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba",
+        "queryMode": "CLASSIC",
+        "query_id": "q-00",
+        "request_id": "r000173",
+        "topK": 10,
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba"
+      },
+      "response": null,
+      "step": "13-main-index",
+      "timestamp_utc": "2026-10-05T09:58:29.227672Z"
+    }
+  ],
+  "run_id": "20261005t0953-a9ba"
+}

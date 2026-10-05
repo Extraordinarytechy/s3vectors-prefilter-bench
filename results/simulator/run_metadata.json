@@ -1,0 +1,56 @@
+{
+  "dataset_sha256": {
+    "metadata.jsonl": "0cf297c711c273e865f2725b0c435fbbc9d3dc31682c4dba5bdab73ab75315d9",
+    "queries.npy_tobytes": "96773b0f846bedb1a7cc409092390b0b0b8defb8d1a15970cb6c94d9522b9b07",
+    "vectors.npy_tobytes": "d2c8c2e77172b3dec3fb8ed5e152ca4c443bd3ec71b7eab2b06f56159baf381f"
+  },
+  "evidence": "SIMULATED",
+  "k_values": [
+    5,
+    10,
+    20,
+    50
+  ],
+  "limits": [
+    "AWS's ANN structure and CLASSIC's filter interleaving are undocumented. Real CLASSIC may use adaptive budgets, graph indexes, or retries that remove or change the underfill.",
+    "Simulator parameters (nlist, C) are illustrative, not fitted to AWS.",
+    "Metadata is independent of vector position; correlated filters could behave differently.",
+    "Simulator results show a mechanism, not a prediction of AWS numbers.",
+    "No timing."
+  ],
+  "n_requests": 22000,
+  "params": {
+    "budgets_c": [
+      500,
+      2000,
+      8000
+    ],
+    "headline_c": 2000,
+    "kmeans_iters": 20,
+    "nlist": 256,
+    "postfilter_pairs": [
+      [
+        100,
+        500
+      ],
+      [
+        100,
+        2000
+      ],
+      [
+        1000,
+        2000
+      ],
+      [
+        100,
+        8000
+      ],
+      [
+        1000,
+        8000
+      ]
+    ]
+  },
+  "postfilter_pairs_note": "SIMULATED post-filter runs only for (B, C) pairs with B <= C, because at most C candidates are seen. B = 10,000 is not simulated.",
+  "seed": 20260930
+}

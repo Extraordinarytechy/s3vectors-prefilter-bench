@@ -1,0 +1,23 @@
+# Run logs and double-run outputs
+logs/
+runs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Local secrets / credentials
+.env
+*.pem
+
+# Canonical dataset arrays regenerate byte-identically from the seed; hashes live in data/manifest.json
+data/*.npy
+data/metadata.jsonl
+
+# Single-instance AWS phase lock, temp files and in-progress AWS phase directories
+results/aws/.lock
+*.tmp
+results/aws/_partial/
+results/aws/_capture/

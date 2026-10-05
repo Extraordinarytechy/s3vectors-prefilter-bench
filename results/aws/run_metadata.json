@@ -1,0 +1,134 @@
+{
+  "approved_usd": 0.374573,
+  "attempts_sent": 17881,
+  "base_usd": 0.187287,
+  "classic_index_available": false,
+  "classic_query_accepted_on_main": false,
+  "classic_source": null,
+  "created_resources": [
+    {
+      "arn_resource": "bucket/s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "bucket": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "created_utc": "2026-10-05T09:53:37.297243Z",
+      "error_code": null,
+      "index": null,
+      "owned": true,
+      "role": "probe_bucket",
+      "status": "deleted",
+      "type": "bucket",
+      "updated_utc": "2026-10-05T13:34:57.908295Z"
+    },
+    {
+      "arn_resource": "bucket/s3vectors-prefilter-bench-20261005t0953-a9ba-probe/index/s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "bucket": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "created_utc": "2026-10-05T09:53:39.616352Z",
+      "error_code": null,
+      "index": "s3vectors-prefilter-bench-20261005t0953-a9ba-probe",
+      "owned": true,
+      "role": "probe_index",
+      "status": "deleted",
+      "type": "index",
+      "updated_utc": "2026-10-05T13:34:57.068337Z"
+    },
+    {
+      "arn_resource": "bucket/s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "bucket": "s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "created_utc": "2026-10-05T09:54:01.152831Z",
+      "error_code": null,
+      "index": null,
+      "owned": true,
+      "role": "main_bucket",
+      "status": "deleted",
+      "type": "bucket",
+      "updated_utc": "2026-10-05T13:34:58.394841Z"
+    },
+    {
+      "arn_resource": "bucket/s3vectors-prefilter-bench-20261005t0953-a9ba/index/s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "bucket": "s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "created_utc": "2026-10-05T09:54:02.192433Z",
+      "error_code": null,
+      "index": "s3vectors-prefilter-bench-20261005t0953-a9ba",
+      "owned": true,
+      "role": "main_index",
+      "status": "deleted",
+      "type": "index",
+      "updated_utc": "2026-10-05T13:34:57.475592Z"
+    }
+  ],
+  "dataset_manifest_sha256": "9536609a777558e846c46bfadd71960cb5196a87ab6c204a9b85c801ddae8305",
+  "end_utc": "2026-10-05T13:34:59.865661Z",
+  "get_index": {
+    "s3vectors-prefilter-bench-20261005t0953-a9ba": {
+      "ResponseMetadata": {
+        "HTTPStatusCode": 200,
+        "RequestId": "15460a11-582f-8841-98da-71b5b26164a7"
+      },
+      "index": {
+        "creationTime": "2026-10-05T15:24:02+05:30",
+        "dataType": "float32",
+        "dimension": 384,
+        "distanceMetric": "cosine",
+        "encryptionConfiguration": {
+          "sseType": "AES256"
+        },
+        "indexArn": "arn:REDACTED",
+        "indexMode": "ENHANCED",
+        "indexName": "s3vectors-prefilter-bench-20261005t0953-a9ba",
+        "vectorBucketName": "s3vectors-prefilter-bench-20261005t0953-a9ba"
+      }
+    }
+  },
+  "git_commit": "b4e8abe38b4483d2638adbab2471b7c501d85083",
+  "hard_cap_usd": 0.374573,
+  "mode": "own",
+  "next_request_seq": 7085,
+  "package_versions": {
+    "boto3": "1.43.107",
+    "botocore": "1.43.107",
+    "matplotlib": "3.10.9",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "pytest": "9.1.1",
+    "python": "3.10.12"
+  },
+  "phase_durations_s": {
+    "aws-capture": 25.1,
+    "aws-cleanup": 16.6,
+    "aws-ingest": 264.2,
+    "aws-probe": 20.4,
+    "aws-query": 8317.1
+  },
+  "phases_completed": [
+    "aws-probe",
+    "aws-ingest",
+    "aws-query",
+    "aws-capture",
+    "aws-cleanup"
+  ],
+  "plan_sha256": "e787e06557e08de74d93cbe51e59ee9146511943a522be1bb71ee13f51cf1558",
+  "prior_runs_spend_usd": 0.0,
+  "profile": "default",
+  "readiness_s": {
+    "s3vectors-prefilter-bench-20261005t0953-a9ba": 25.7
+  },
+  "region": "us-east-1",
+  "run_id": "20261005t0953-a9ba",
+  "spend_by_line_usd": {
+    "data_processed": 0.005646938006121339,
+    "data_returned": 0.0020357120000000038,
+    "other_requests": 0.004124999999999998,
+    "put": 0.015976214399999994,
+    "query_requests": 0.04426250000000907,
+    "storage": 0.0011012125216438356
+  },
+  "spend_tally_usd": 0.07314757692778383,
+  "start_utc": "2026-10-05T09:53:23.877759Z",
+  "stopped_reason": null,
+  "topk_max_documented": {
+    "fetched_utc": "2026-10-02",
+    "note": "Re-read the limits page on run day before approving the estimate (DESIGN 7.4).",
+    "results_per_page": 100,
+    "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html",
+    "value": 10000
+  }
+}
